@@ -9,6 +9,9 @@
  *  - Serving via SSL
  *
  */
+
+App::uses('AppHelper', 'View/Helper');
+
 class CfHelper extends AppHelper {
 
     /**
@@ -86,7 +89,8 @@ class CfHelper extends AppHelper {
         'remoteCompressedFiles' => false
     );
 
-    public function __construct($configuration) {
+    public function __construct(View $view, $configuration = array()) {
+        parent::__construct($view, $configuration);
 
         if (!empty($configuration)) {
             $this->configuration = array_merge($this->configuration, $configuration);
