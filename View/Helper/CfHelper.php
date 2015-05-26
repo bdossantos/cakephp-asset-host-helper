@@ -118,7 +118,7 @@ class CfHelper extends AppHelper {
      * (We really, really should)
      *
      */
-    public function beforeRender() {
+    public function beforeRender($viewFile) {
 
         if ((Configure::read('Asset.timestamp') == true && Configure::read('debug') == 0) || Configure::read('Asset.timestamp') === 'force') {
             $this->configuration['forceTimestamp'] = true;
